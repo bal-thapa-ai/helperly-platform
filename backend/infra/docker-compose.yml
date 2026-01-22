@@ -1,0 +1,15 @@
+services:
+  helperly-postgres:
+    image: pgvector/pgvector:pg16
+    container_name: helperly-postgres
+    environment:
+      POSTGRES_USER: helperly
+      POSTGRES_PASSWORD: helperly_dev_pw
+      POSTGRES_DB: helperly
+    ports:
+      - "5433:5432"
+    volumes:
+      - helperly_pgdata:/var/lib/postgresql/data
+
+volumes:
+  helperly_pgdata:
